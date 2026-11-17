@@ -1,0 +1,12 @@
+# PZA's SlowMo for Meitou - 简体中文 (zh)，仅 Meitou。MACHINE-DRAFTED (machine-drafted by Claude for PZA, 2026-11-16):
+# not yet checked by a native speaker. Corrections are welcome and will be credited.
+# The other keys are in zh.txt (shared with the RE_Kenshi plugin). Format: key = text (UTF-8).
+
+meitou.help.3 = 慢动作开启时，使用 Meitou 自带的速度按钮（或 F2 到 F4）会把控制权交还给游戏。单按 L 仍会让选中的人休息：只有 Shift+L 属于本模组。
+meitou.help.4 = 点右上角的 - 或双击标题栏，窗口会缩成一个小按钮：单击它切换慢动作，双击它或点它旁边的 + 重新打开窗口，拖动它可以移动，鼠标滚轮调整不透明度。所有更改都会保存。
+meitou.tab.main = 慢动作
+meitou.tab.help = 帮助
+meitou.msg.on = SlowMo 开启
+meitou.msg.off = SlowMo 关闭
+meitou.mini.on = SlowMo 开启 {1}x
+meitou.mini.off = SlowMo 关闭 {1}x

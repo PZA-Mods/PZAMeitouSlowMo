@@ -1,0 +1,12 @@
+# PZA's SlowMo for Meitou - русский текст (ru), только для Meitou. MACHINE-DRAFTED (machine-drafted by Claude for PZA, 2026-11-16):
+# not yet checked by a native speaker. Corrections are welcome and will be credited.
+# The other keys are in ru.txt (shared with the RE_Kenshi plugin). Format: key = text (UTF-8).
+
+meitou.help.3 = Собственные кнопки скорости Meitou (или F2 - F4) при включённом замедлении возвращают управление игре. Просто L по-прежнему отправляет выбранных отдыхать: наша только Shift+L.
+meitou.help.4 = Кнопка - справа вверху или двойной щелчок по заголовку сворачивает окно в маленькую кнопку: щелчок по ней переключает замедление, двойной щелчок или её + снова открывает окно, её можно перетаскивать, колесо мыши меняет прозрачность. Всё сохраняется.
+meitou.tab.main = ЗАМЕДЛЕНИЕ
+meitou.tab.help = СПРАВКА
+meitou.msg.on = SlowMo ВКЛ
+meitou.msg.off = SlowMo ВЫКЛ
+meitou.mini.on = SlowMo ВКЛ {1}x
+meitou.mini.off = SlowMo ВЫКЛ {1}x

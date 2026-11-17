@@ -1,0 +1,12 @@
+# PZA's SlowMo for Meitou - 日本語 (ja)、Meitou のみ。MACHINE-DRAFTED (machine-drafted by Claude for PZA, 2026-11-16):
+# not yet checked by a native speaker. Corrections are welcome and will be credited.
+# The other keys are in ja.txt (shared with the RE_Kenshi plugin). Format: key = text (UTF-8).
+
+meitou.help.3 = スローモーション中に Meitou 自身の速度ボタン（または F2 から F4）を押すと、操作がゲームに戻ります。L だけなら今まで通り選択中のキャラクターが休みます：Shift+L だけがこの MOD のキーです。
+meitou.help.4 = 右上の - かタイトルのダブルクリックで、ウィンドウが小さなボタンになります。クリックでスローモーションを切り替え、ダブルクリックか横の + でウィンドウを再び開き、ドラッグで移動、マウスホイールで不透明度を変えます。変更はすべて保存されます。
+meitou.tab.main = スローモーション
+meitou.tab.help = ヘルプ
+meitou.msg.on = SlowMo オン
+meitou.msg.off = SlowMo オフ
+meitou.mini.on = SlowMo オン {1}x
+meitou.mini.off = SlowMo オフ {1}x
