@@ -39,6 +39,10 @@ Known limits:
 - The Settings page labels are English only; the window, help and messages are in English, Russian, Chinese and Japanese (machine
   translations, not yet checked by native speakers).
 
+## Planned
+Ideas, no dates:
+- A **brisk fast-forward** between normal speed and 2x (1.25x / 1.5x), for watching fights and cloth at a quicker pace.
+
 ## Reporting a bug
 Tell us what happened, how to make it happen again, your Meitou version and your mod list, and attach Meitou's `log.txt` (in your Meitou
 folder) copied right after that session. Every line of ours in it starts with `pza.slowmotion`. Post it in its thread on the Meitou Discord or in the Workshop page's Bug reports discussion.
