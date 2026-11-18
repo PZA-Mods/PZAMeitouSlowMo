@@ -4,6 +4,7 @@
 
 meitou.help.3 = 慢动作开启时，使用 Meitou 自带的速度按钮（或 F2 到 F4）会把控制权交还给游戏。单按 L 仍会让选中的人休息：只有 Shift+L 属于本模组。
 meitou.help.4 = 点右上角的 - 或双击标题栏，窗口会缩成一个小按钮：单击它切换慢动作，双击它或点它旁边的 + 重新打开窗口，拖动它可以移动，鼠标滚轮调整不透明度。所有更改都会保存。
+meitou.help.5 = 其他 PZA 模组可能会短暂放慢时间，例如 WASD 的轮盘菜单：暂停时不会改变，你自己的速度按钮始终优先。
 meitou.tab.main = 慢动作
 meitou.tab.help = 帮助
 meitou.msg.on = SlowMo 开启

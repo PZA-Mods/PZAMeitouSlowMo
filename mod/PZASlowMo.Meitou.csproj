@@ -15,7 +15,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
-    <Version>0.2.6</Version>
+    <Version>0.3.0</Version>
     
     <Authors>PZA</Authors>
     <Company>PZA</Company>

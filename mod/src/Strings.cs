@@ -54,6 +54,7 @@ public static class Strings
         ("help.2", "The top button switches slow motion on and off (also Shift+L). The slider, - and + pick how slow. Hold Shift+L and tap + or - to change the speed from the keyboard."),
         ("meitou.help.3", "Meitou's own speed buttons (or F2 to F4) while it is on hand control back to the game. Plain L still makes the selection rest: only Shift+L is ours."),
         ("meitou.help.4", "The - at the top right, or a double click on the title, shrinks the window to a tiny button: click it to switch slow motion, double-click it or press its + to open the window again, drag it to move it, mouse wheel for opacity. Everything is saved."),
+        ("meitou.help.5", "Other PZA mods may slow time briefly, e.g. WASD's dials: a pause stays a pause, and your own speed buttons always win."),
         ("meitou.tab.main", "SLOW MOTION"),
         ("meitou.tab.help", "HELP"),
         ("tip.toggle", "Slow motion on/off (also Shift+L)."),

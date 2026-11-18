@@ -25,6 +25,7 @@ public sealed class SlowMoMod : IMod
         foreach (var line in kept) Log.Line(line);
 
         if (!Start(context.Harmony)) return;
+        Driver.Live = true;   // 0.3.0: SlowMoApi holds are taken from here on
         // the window and the tiny button: PZA's Meitou UI (0.2.0)
         PZA.MeitouUi.PzaUi.Log = s => Log.Line(s);
         PZA.MeitouUi.PzaUi.EachFrame = SlowWindow.EachFrame;
