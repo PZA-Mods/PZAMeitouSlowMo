@@ -6,5 +6,5 @@
   "apiVersion": 2,
   "assemblies": ["PZASlowMo.Meitou.dll"],
   "entry": "PZA.SlowMotion.Meitou.SlowMoMod",
-  "gameVersion": ">=0.20.1 <0.22.0"
+  "gameVersion": ">=0.20.1"
 }

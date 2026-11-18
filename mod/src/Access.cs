@@ -59,6 +59,12 @@ public static class Access
             if (clock.GetMethod(name) is null) missing.Add("method SimulationClock." + name);
         // optional: the message line (as PZA's WASD Control); a miss only turns the on / off message off
         s_notice = AccessTools.Method(PlayerInterface, "Notice", [typeof(string), typeof(bool), typeof(string)]);
+        // optional: Meitou's build mode (PlayerInterface.Build => BuildMode, its internal bool Active; 0.20.1 to 0.22.1). Since 0.22.0 its
+        // ghost uses = / - and NUM+ / NUM- (BuildMoveUp / Down, BuildTiltIncrease / Decrease), so our Shift+L + / - stands aside while it
+        // is on. A miss means "never building": the speed keys then always work, as before.
+        s_build = AccessTools.Property(PlayerInterface, "Build");
+        s_buildActive = s_build is null ? null : AccessTools.Field(s_build.PropertyType, "Active");
+        if (s_buildActive is not null && s_buildActive.FieldType != typeof(bool)) s_buildActive = null;
         return missing;
     }
 
@@ -71,6 +77,18 @@ public static class Access
     {
         if (m is null) missing.Add("method " + name);
         return m!;
+    }
+
+    static PropertyInfo? s_build;
+    static FieldInfo? s_buildActive;
+    /// <summary>Meitou's build-mode lookup resolved (the offline check asserts it on every Meitou it checks).</summary>
+    public static bool HasBuild => s_build is not null && s_buildActive is not null;
+    /// <summary>Meitou's build mode is on (placing a building): its ghost owns = / - and NUM+ / NUM-.</summary>
+    public static bool Building(object player)
+    {
+        if (!HasBuild) return false;
+        var b = s_build!.GetValue(player);
+        return b is not null && (bool)s_buildActive!.GetValue(b)!;
     }
 
     /// <summary>A text box has the keyboard.</summary>

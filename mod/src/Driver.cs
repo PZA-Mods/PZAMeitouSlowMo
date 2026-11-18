@@ -120,6 +120,9 @@ public static class Driver
 
     #region Input (InputBindings.Resolve postfix)
 
+    /// <summary>Meitou's build mode is on. The offline check swaps it for a stub (it has no PlayerInterface).</summary>
+    public static Func<bool> IsBuilding = () => Player is not null && Access.Building(Player);
+
     public static void OnResolve(TickInput input)
     {
         if (Player is not null && Access.UiEditing(Player))
@@ -134,7 +137,15 @@ public static class Driver
         bool held = shift && input.IsDown(Letter);
         bool plus = input.WasPressed(Key.Equal) || input.WasPressed(Key.KeypadAdd);
         bool minus = input.WasPressed(Key.Minus) || input.WasPressed(Key.KeypadSubtract);
-        switch (SlowCore.ChordStep(ref s_chord, started, held, plus, minus))
+        int step = SlowCore.ChordStep(ref s_chord, started, held, plus, minus);
+        if ((step == SlowCore.Faster || step == SlowCore.Slower) && IsBuilding())
+        {
+            // 0.3.0 (Meitou 0.22): while a building is placed, + / - move and tilt its ghost; we do not also change the speed. The tap still
+            // counts as used (no toggle when Shift+L is let go).
+            Counters.Add("skip.build");
+            step = SlowCore.None;
+        }
+        switch (step)
         {
             case SlowCore.Toggle: Queue(Act.Toggle, "Shift+L"); break;
             case SlowCore.Faster: Queue(Act.Faster, "Shift+L and +"); break;

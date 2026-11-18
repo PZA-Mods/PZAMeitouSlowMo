@@ -99,7 +99,7 @@ public static class SlowWindow
         PzaWindow.Tooltip(b, "Toggle", Strings.T("tip.toggle"));
         PzaWindow.Tooltip(b, "Slower", Strings.T("tip.minus"));
         PzaWindow.Tooltip(b, "Faster", Strings.T("tip.plus"));
-        Window.Paragraphs(b, "lstHelp", string.Join("\n\n", Strings.T("help.1"), Strings.T("help.2"), Strings.T("meitou.help.3"), Strings.T("meitou.help.4"), Strings.T("meitou.help.5")));
+        Window.Paragraphs(b, "lstHelp", string.Join("\n\n", Strings.T("help.1"), Strings.T("help.2"), Strings.T("meitou.help.3"), Strings.T("meitou.help.4"), Strings.T("meitou.help.5"), Strings.T("meitou.help.6")));
     }
 
     static void OnEvent(MyGuiEvent e)

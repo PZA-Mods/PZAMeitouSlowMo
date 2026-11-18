@@ -55,6 +55,7 @@ public static class Strings
         ("meitou.help.3", "Meitou's own speed buttons (or F2 to F4) while it is on hand control back to the game. Plain L still makes the selection rest: only Shift+L is ours."),
         ("meitou.help.4", "The - at the top right, or a double click on the title, shrinks the window to a tiny button: click it to switch slow motion, double-click it or press its + to open the window again, drag it to move it, mouse wheel for opacity. Everything is saved."),
         ("meitou.help.5", "Other PZA mods may slow time briefly, e.g. WASD's dials: a pause stays a pause, and your own speed buttons always win."),
+        ("meitou.help.6", "While you place a building, + and - move and tilt it (Meitou's build keys), so Shift+L with + or - does not change the speed then."),
         ("meitou.tab.main", "SLOW MOTION"),
         ("meitou.tab.help", "HELP"),
         ("tip.toggle", "Slow motion on/off (also Shift+L)."),

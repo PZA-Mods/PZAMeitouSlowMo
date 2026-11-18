@@ -46,6 +46,8 @@ public sealed class SlowMoMod : IMod
         try
         {
             foreach (var line in Patches.Apply(harmony)) Log.Line(line);
+            Log.Line(Access.HasBuild ? "build mode found: Shift+L with + / - stands aside while a building is placed (its ghost owns + / -)"
+                                     : "build mode not found: Shift+L with + / - always changes the speed");
             return true;
         }
         catch (Exception e)

@@ -4,6 +4,7 @@
 #   .\build.ps1 -Check     also run tools\check on the staged folder: Meitou 0.20.1's own code-mod checks, the rules (SlowCore), the language
 #                          files, the four patches applied to the real MeitouClient.dll, and the window built and clicked through Meitou's UiHost.
 #                          On a copy of the .NET 11 runtime inside the Meitou release; it never starts the game.
+#   .\build.ps1 -Fuzz      also run the fuzz harness (tests\fuzz); -Check runs it too (2026-11-18)
 #   -MeitouDir <dir>       the unpacked Meitou release (default: MeitouDir in mod\local.props, git-ignored)
 #   -PluginDir <dir>       the RE_Kenshi plugin's repo (default ..\..\PZASlowMo): its PZASlowMo.mod and lang\*.txt are shared, so one
 #                          folder serves both games
@@ -11,6 +12,7 @@
 # It installs nothing (README "Install"). out\ is git-ignored.
 param(
     [switch]$Check,
+    [switch]$Fuzz,
     [string]$MeitouDir = "",
     [string]$PluginDir = "",
     [string]$KenshiDir = "C:\Program Files (x86)\Steam\steamapps\common\Kenshi"
@@ -59,4 +61,12 @@ if ($Check) {
     Push-Location $rt
     try { & dotnet exec --runtimeconfig check.runtimeconfig.json check.dll $stage $KenshiDir } finally { Pop-Location }
     if ($LASTEXITCODE -ne 0) { throw "check FAILED ($LASTEXITCODE)" }
+}
+
+# 2026-11-18: the fuzz harness (tests\fuzz, PZA's Meitou UI fuzz kit) on the same Meitou release: -Fuzz runs it, and so does every -Check
+# (a release also needs the mutation check, PZAMeitouUi\fuzz\mutate.py). It never starts the game.
+if ($Fuzz -or $Check) {
+    $fuzzRunner = Join-Path $here "..\..\PZAMeitouUi\fuzz\run_fuzz.ps1"
+    & powershell -NoProfile -ExecutionPolicy Bypass -File $fuzzRunner -Repo (Join-Path $here "..") -MeitouDir $MeitouDir
+    if ($LASTEXITCODE -ne 0) { throw "fuzz FAILED ($LASTEXITCODE): report in tests\out\fuzz\fuzz-report.txt" }
 }
