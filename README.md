@@ -3,6 +3,8 @@
 One key, **Shift+L**, puts Meitou into slow motion, from 0.10x to 0.60x. Press it again to go back to the speed you were playing at. Made
 for dramatic fights, screenshots and machinima. A port of PZA's SlowMo for RE_Kenshi.
 
+![PZA's SlowMo in Meitou: a duel and a kill](https://raw.githubusercontent.com/PZA-Mods/PZASlowMo/main/media/slowmo-meitou-duel.gif)
+
 **Download:** the mod zip and its source zip are on the [Releases page](https://github.com/PZA-Mods/PZAMeitouSlowMo/releases). Building from source: [BUILD.md](BUILD.md).
 
 ## Hotkeys
