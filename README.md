@@ -1,4 +1,4 @@
-# PZA's SlowMo for Meitou (beta 0.2.6)
+# PZA's SlowMo for Meitou (beta 0.3.0)
 
 One key, **Shift+L**, puts Meitou into slow motion, from 0.10x to 0.60x. Press it again to go back to the speed you were playing at. Made
 for dramatic fights, screenshots and machinima. A port of PZA's SlowMo for RE_Kenshi.
@@ -23,17 +23,17 @@ drag it anywhere, mouse wheel over it for its opacity. Speed, places and opacity
 **Settings > Mods > PZASlowMo**.
 
 ## Requires
-**Meitou 0.20.1 up to 0.21.x.** It refuses to load on other Meitou versions.
+**Meitou 0.20.1 and newer.** Checked on Meitou 0.20.1, 0.21.0 and 0.22.1; there is no upper version cap any more, so a newer Meitou no longer refuses it.
 
 ## Install
-- Unpack `PZASlowMo.Meitou-0.2.6-beta.zip` into Kenshi's folder, so you get `Kenshi\mods\PZASlowMo\`, then tick
+- Unpack `PZASlowMo.Meitou-0.3.0-beta.zip` into Kenshi's folder, so you get `Kenshi\mods\PZASlowMo\`, then tick
   **PZASlowMo** in Meitou's mod list. If you also use PZA's SlowMo for RE_Kenshi, it is the same folder on purpose: each game loads only its
   own file.
 - It adds no items or world data, so its place in the load order doesn't matter. Safe to remove at any time.
 
 ## This is a beta
 The first builds were played in Meitou and worked. **This build (the slider window and the kept settings) has passed its offline checks
-on Meitou 0.20.1 and 0.21.0 but has not been played in game yet.** Expect rough edges.
+on Meitou 0.20.1, 0.21.0 and 0.22.1 but has not been played in game yet.** Expect rough edges.
 
 Known limits:
 - The Settings page labels are English only; the window, help and messages are in English, Russian, Chinese and Japanese (machine
