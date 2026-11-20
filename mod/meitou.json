@@ -2,7 +2,7 @@
   // PZA's SlowMo for Meitou (author PZA, GPLv3 or later). Schema: MeitouClient docs/modding.md "Discovery", docs/modding-dependencies.md "Manifest".
   // The folder can be the RE_Kenshi plugin's own (mods\PZASlowMo\): Meitou loads only the assembly listed here, RE_Kenshi only RE_Kenshi.json's.
   "id": "pza.slowmotion",
-  "version": "0.3.0",
+  "version": "0.4.2",
   "apiVersion": 2,
   "assemblies": ["PZASlowMo.Meitou.dll"],
   "entry": "PZA.SlowMotion.Meitou.SlowMoMod",

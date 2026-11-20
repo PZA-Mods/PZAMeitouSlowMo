@@ -29,14 +29,19 @@ public static class SlowWindow
     public static int FromPos(float pos) => SlowCore.Snap(SlowCore.MinH + SlowCore.StepH * (int)Math.Round(pos));
     public static int Positions => (SlowCore.MaxH - SlowCore.MinH) / SlowCore.StepH + 1;
 
-    public static string LayoutXml() => L.Doc(L.WindowMin("Root", "PZA'S SLOWMO", 0.62, 0.12, 0.22, 0.29,   // 0.2.4: 0.29 high (was 0.36; the user 2026-11-17: no empty half windows)
+    // 0.3.1: 0.19 x 0.21 of the screen (was 0.22 x 0.29; the user 2026-11-19: "obnoxiously large compared to our RE_Kenshi version", whose
+    // window is about 366 x 164 px at 1080p = 0.19 x 0.15; ours keeps the extra height for its title bar and tab row). 0.2.4: 0.29 (was 0.36).
+    // 0.3.2: 0.19 x 0.25 with the rows at their old pixel heights (toggle ~43, speed line ~28, slider row ~49 px at 1080p) and a clear gap
+    // under the tab strip: the even shrink to 0.21 squeezed the slider skin and the - / + buttons and put the toggle against the tabs (the user,
+    // 2026-11-19: "the menu clearly looks fucked"). Only empty space is cut.
+    public static string LayoutXml() => L.Doc(L.WindowMin("Root", "PZA'S SLOWMO", 0.62, 0.12, 0.19, 0.25,
         L.Tabs("Tabs", 0.03, 0.02, 0.94, 0.95,
             ("TabMain", [
-                L.Button("Toggle", 0.04, 0.07, 0.92, 0.25),
-                L.Text("lbSpeed", 0.04, 0.39, 0.92, 0.17),
-                L.Button("Slower", 0.04, 0.64, 0.13, 0.22),
-                L.Slider("Slider", 0.19, 0.64, 0.62, 0.22, range: Positions, pos: Pos(Driver.SpeedH)),
-                L.Button("Faster", 0.83, 0.64, 0.13, 0.22)]),
+                L.Button("Toggle", 0.04, 0.08, 0.92, 0.23),
+                L.Text("lbSpeed", 0.05, 0.37, 0.90, 0.15),
+                L.Button("Slower", 0.04, 0.59, 0.13, 0.26),
+                L.Slider("Slider", 0.19, 0.59, 0.62, 0.26, range: Positions, pos: Pos(Driver.SpeedH)),
+                L.Button("Faster", 0.83, 0.59, 0.13, 0.26)]),
             L.HelpList("TabHelp", "lstHelp"))));
 
     public static void Setup()
@@ -99,7 +104,7 @@ public static class SlowWindow
         PzaWindow.Tooltip(b, "Toggle", Strings.T("tip.toggle"));
         PzaWindow.Tooltip(b, "Slower", Strings.T("tip.minus"));
         PzaWindow.Tooltip(b, "Faster", Strings.T("tip.plus"));
-        Window.Paragraphs(b, "lstHelp", string.Join("\n\n", Strings.T("help.1"), Strings.T("help.2"), Strings.T("meitou.help.3"), Strings.T("meitou.help.4"), Strings.T("meitou.help.5"), Strings.T("meitou.help.6")));
+        Window.Paragraphs(b, "lstHelp", string.Join("\n\n", Strings.T("help.1"), Strings.T("help.2"), Strings.T("meitou.help.3"), Strings.T("meitou.help.4"), Strings.T("meitou.help.5"), Strings.T("meitou.help.6"), Strings.T("meitou.help.7")));
     }
 
     static void OnEvent(MyGuiEvent e)

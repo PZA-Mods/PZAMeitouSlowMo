@@ -6,6 +6,7 @@ meitou.help.3 = 慢动作开启时，使用 Meitou 自带的速度按钮（或 F
 meitou.help.4 = 点右上角的 - 或双击标题栏，窗口会缩成一个小按钮：单击它切换慢动作，双击它或点它旁边的 + 重新打开窗口，拖动它可以移动，鼠标滚轮调整不透明度。所有更改都会保存。
 meitou.help.5 = 其他 PZA 模组可能会短暂放慢时间，例如 WASD 的轮盘菜单：暂停时不会改变，你自己的速度按钮始终优先。
 meitou.help.6 = 放置建筑时，+ 和 - 用于升降和倾斜建筑（Meitou 的建造按键），因此这时 Shift+L 加 + 或 - 不会改变速度。
+meitou.help.7 = Kill cam（Settings > Mods，默认关闭）：选中的角色击杀、击晕或砍断肢体时，时间会短暂变慢（0.25x，持续 1 秒，两者都可调整；三种情况可分别关闭）。另有两个选项，默认关闭：闪避，以及你自己的角色倒下时。
 meitou.tab.main = 慢动作
 meitou.tab.help = 帮助
 meitou.msg.on = SlowMo 开启

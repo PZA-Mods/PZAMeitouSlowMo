@@ -4,6 +4,7 @@
 using System.Reflection;
 using Meitou.Localisation;
 using Meitou.Modding;
+using Meitou.Simulation;
 
 namespace PZA.SlowMotion.Meitou;
 
@@ -31,6 +32,10 @@ public sealed class SlowMoMod : IMod
         PZA.MeitouUi.PzaUi.EachFrame = SlowWindow.EachFrame;
         SlowWindow.Setup();
         PZA.MeitouUi.PzaUi.Install(context);
+        // 0.4.0 kill cam: Meitou's public hit observer (read only; the moment is a SlowMoApi hold, released by the control tick)
+        context.AddSystem("pza.slowmotion.killcam", _ => new KillCam(), SystemAnchor.End);
+        Log.Line(Access.HasSelection ? $"kill cam: {(Driver.Settings.KillCam ? "ON" : "off")} ({Strings.Speed(KillCamCore.SpeedH(Driver.Settings.KillCamSpeed))} for {Driver.Settings.KillCamSeconds:0.##} s on a kill, knockout or limb by a selected character)"
+                                         : "kill cam unavailable: the game lacks PlayerInterface.SelectedIds()");
         context.AddDebugCommand("Slow motion: on / off (Shift+L)", _ => Driver.DebugToggle());
     }
 

@@ -35,6 +35,22 @@ public static class Strings
         public const string OpacityHint = "0.35 (faint) to 1 (solid). The mouse wheel over the tiny button changes it.";
         public const string PopupsLabel = "On-screen messages";
         public const string PopupsHint = "A message when slow motion turns on or off (\"Slow motion 0.30x\").";
+        public const string KillCamLabel = "Kill cam";
+        public const string KillCamHint = "A short slow-motion moment when a selected character kills, knocks out or severs a limb.";
+        public const string KillCamSpeedLabel = "Kill cam speed";
+        public const string KillCamSpeedHint = "How slow the moment runs: 0.10x to 0.60x.";
+        public const string KillCamSecondsLabel = "Kill cam length";
+        public const string KillCamSecondsHint = "How long the moment lasts, in real seconds (0.25 to 3). Another blow during it makes it last longer.";
+        public const string KillCamKillsLabel = "Kill cam: kills";
+        public const string KillCamKillsHint = "A slow moment when a selected character kills someone.";
+        public const string KillCamKosLabel = "Kill cam: knockouts";
+        public const string KillCamKosHint = "A slow moment when a selected character knocks someone out.";
+        public const string KillCamLimbsLabel = "Kill cam: severed limbs";
+        public const string KillCamLimbsHint = "A slow moment when a selected character cuts off an arm or a leg.";
+        public const string KillCamDodgesLabel = "Kill cam: dodges";
+        public const string KillCamDodgesHint = "A slow moment when a selected character dodges a blow. Martial artists dodge a lot.";
+        public const string KillCamOwnLabel = "Kill cam: your own character";
+        public const string KillCamOwnHint = "Also when a selected character is the one killed, knocked out or losing a limb (the three switches above apply).";
         public const string LangLabel = "Language";
         public const string LangHint = "auto = the game's language. Needs a restart of the game.";
     }
@@ -56,6 +72,7 @@ public static class Strings
         ("meitou.help.4", "The - at the top right, or a double click on the title, shrinks the window to a tiny button: click it to switch slow motion, double-click it or press its + to open the window again, drag it to move it, mouse wheel for opacity. Everything is saved."),
         ("meitou.help.5", "Other PZA mods may slow time briefly, e.g. WASD's dials: a pause stays a pause, and your own speed buttons always win."),
         ("meitou.help.6", "While you place a building, + and - move and tilt it (Meitou's build keys), so Shift+L with + or - does not change the speed then."),
+        ("meitou.help.7", "Kill cam (Settings > Mods, off by default): when a selected character kills, knocks out or severs a limb, time runs slow for a moment (0.25x for 1 second, both adjustable; each of the three can be switched off). Two more options, off by default: dodges, and your own character going down."),
         ("meitou.tab.main", "SLOW MOTION"),
         ("meitou.tab.help", "HELP"),
         ("tip.toggle", "Slow motion on/off (also Shift+L)."),

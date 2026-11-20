@@ -65,6 +65,9 @@ public static class Access
         s_build = AccessTools.Property(PlayerInterface, "Build");
         s_buildActive = s_build is null ? null : AccessTools.Field(s_build.PropertyType, "Active");
         if (s_buildActive is not null && s_buildActive.FieldType != typeof(bool)) s_buildActive = null;
+        s_selectedIds = AccessTools.Method(PlayerInterface, "SelectedIds", Type.EmptyTypes);
+        if (s_selectedIds is not null && !typeof(IReadOnlyList<global::Meitou.Simulation.CharacterId>).IsAssignableFrom(s_selectedIds.ReturnType))
+            s_selectedIds = null;
         return missing;
     }
 
@@ -90,6 +93,14 @@ public static class Access
         var b = s_build!.GetValue(player);
         return b is not null && (bool)s_buildActive!.GetValue(b)!;
     }
+
+    /// <summary>0.4.0 kill cam: PlayerInterface.SelectedIds() (internal; 0.20.1 to 0.22.1). A miss only keeps the kill cam off.</summary>
+    static MethodInfo? s_selectedIds;
+    public static bool HasSelection => s_selectedIds is not null;
+    public static IReadOnlyList<global::Meitou.Simulation.CharacterId> SelectedIds(object player) =>
+        (IReadOnlyList<global::Meitou.Simulation.CharacterId>)s_selectedIds!.Invoke(player, null)!;
+    /// <summary>The call threw: the kill cam stays off for the session.</summary>
+    public static void DropSelection() => s_selectedIds = null;
 
     /// <summary>A text box has the keyboard.</summary>
     public static bool UiEditing(object player) => (bool)s_uiEditing.GetValue(player)!;

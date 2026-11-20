@@ -160,6 +160,7 @@ public static class Driver
     public static void OnTick(WorldSession session)
     {
         Log.Tick();
+        KillCam.HostTick(Player);   // 0.4.0: the selection for the hit observer, and the end of a kill-cam moment
         Step(session, session.Simulation);
     }
 

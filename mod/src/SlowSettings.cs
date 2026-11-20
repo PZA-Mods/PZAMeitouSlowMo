@@ -42,6 +42,34 @@ public sealed class SlowSettings
     [Setting(Strings.En.PopupsLabel, Hint = Strings.En.PopupsHint)]
     public bool Popups { get; set; } = true;
 
+    /// <summary>0.4.0 kill cam: a short slow moment when a selected character kills, knocks out or severs a limb. Off by default.</summary>
+    [Setting(Strings.En.KillCamLabel, Hint = Strings.En.KillCamHint)]
+    public bool KillCam { get; set; }
+
+    [Setting(Strings.En.KillCamSpeedLabel, Hint = Strings.En.KillCamSpeedHint, Min = 0.10, Max = 0.60, Step = 0.05, VisibleWhen = nameof(KillCam))]
+    public double KillCamSpeed { get; set; } = 0.25;
+
+    [Setting(Strings.En.KillCamSecondsLabel, Hint = Strings.En.KillCamSecondsHint, Min = 0.25, Max = 3, Step = 0.25, VisibleWhen = nameof(KillCam))]
+    public double KillCamSeconds { get; set; } = 1.0;
+
+    /// <summary>0.4.1 (the user, 2026-11-19): which moments the kill cam takes, each on its own.</summary>
+    [Setting(Strings.En.KillCamKillsLabel, Hint = Strings.En.KillCamKillsHint, VisibleWhen = nameof(KillCam))]
+    public bool KillCamKills { get; set; } = true;
+
+    [Setting(Strings.En.KillCamKosLabel, Hint = Strings.En.KillCamKosHint, VisibleWhen = nameof(KillCam))]
+    public bool KillCamKnockouts { get; set; } = true;
+
+    [Setting(Strings.En.KillCamLimbsLabel, Hint = Strings.En.KillCamLimbsHint, VisibleWhen = nameof(KillCam))]
+    public bool KillCamLimbs { get; set; } = true;
+
+    /// <summary>0.4.2 (the user, 2026-11-19): a moment when a selected character dodges a blow (off by default: martial artists dodge a lot).</summary>
+    [Setting(Strings.En.KillCamDodgesLabel, Hint = Strings.En.KillCamDodgesHint, VisibleWhen = nameof(KillCam))]
+    public bool KillCamDodges { get; set; }
+
+    /// <summary>0.4.2: also when a selected character is the one killed, knocked out or losing a limb (the three switches above apply).</summary>
+    [Setting(Strings.En.KillCamOwnLabel, Hint = Strings.En.KillCamOwnHint, VisibleWhen = nameof(KillCam))]
+    public bool KillCamOwn { get; set; }
+
     /// <summary>auto = the game's language.</summary>
     [Setting(Strings.En.LangLabel, Hint = Strings.En.LangHint, Options = ["auto", "en", "ru", "zh", "ja"])]
     public string Language { get; set; } = "auto";
