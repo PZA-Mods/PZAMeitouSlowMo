@@ -2,12 +2,12 @@
 
 Author: PZA. Licence: GNU GPL version 3 or later (`LICENSE`).
 
-This is the source of PZA's SlowMo for Meitou 0.3.0 (beta, commit `a1cf25f` of the development repository). Each release also carries a `-source.zip` with everything the DLL is built from, the shared code included.
+This is the source of PZA's SlowMo for Meitou 0.4.2 (beta, commit `c27fe2f` of the development repository). Each release also carries a `-source.zip` with everything the DLL is built from, the shared code included.
 
 You need:
 - the .NET SDK (10 or newer)
 - an unpacked Meitou release (0.20.1 or newer, win-x64)
-- PZA's Meitou UI 0.3.1 beside this folder (`..\PZAMeitouUi\src`; its code is compiled in), also in the source zip
+- PZA's Meitou UI 0.3.2 beside this folder (`..\PZAMeitouUi\src`; its code is compiled in), also in the source zip
 
 Build (PowerShell):
 

@@ -1,4 +1,4 @@
-# PZA's SlowMo for Meitou (beta 0.3.0)
+# PZA's SlowMo for Meitou (beta 0.4.2)
 
 One key, **Shift+L**, puts Meitou into slow motion, from 0.10x to 0.60x. Press it again to go back to the speed you were playing at. Made
 for dramatic fights, screenshots and machinima. A port of PZA's SlowMo for RE_Kenshi.
@@ -24,17 +24,33 @@ A small window in Kenshi's own style: an on / off button, a speed slider (0.10x 
 drag it anywhere, mouse wheel over it for its opacity. Speed, places and opacity are kept after a restart. More in
 **Settings > Mods > PZASlowMo**.
 
+## The kill cam (new in 0.4)
+An optional, automatic slow-motion moment. When a **selected** character **kills**, **knocks out** or **severs a limb**, time drops to
+**0.25x for one second**, then comes back on its own. Another blow during the moment makes it last longer.
+
+![PZA's SlowMo kill cam in Meitou](https://raw.githubusercontent.com/PZA-Mods/PZASlowMo/main/media/slowmo-meitou-killcam.gif)
+
+- **Off by default:** turn it on in **Settings > Mods > PZASlowMo > Kill cam**.
+- Speed (0.10x to 0.60x) and length (0.25 to 3 seconds) are adjustable.
+- Kills, knockouts and severed limbs switch on and off one by one.
+- Two more options, both off by default: a moment when your selected character **dodges** a blow, and when your selected character is the
+  one killed, knocked out or losing a limb.
+- A pause stays a pause, and the game's own speed buttons always win. If slow motion is already on at a slower speed, the kill cam leaves
+  it alone.
+
 ## Requires
 **Meitou 0.20.1 and newer.** Checked on Meitou 0.20.1, 0.21.0 and 0.22.1; there is no upper version cap any more, so a newer Meitou no longer refuses it.
 
 ## Install
-- Unpack `PZASlowMo.Meitou-0.3.0-beta.zip` into Kenshi's folder, so you get `Kenshi\mods\PZASlowMo\`, then tick
+- **Workshop:** it comes inside the PZA's SlowMo Workshop item (one item for both games); subscribe, then tick **PZASlowMo** in
+  Meitou's mod list.
+- **By hand (GitHub):** unpack `PZASlowMo.Meitou-0.4.2-beta.zip` into Kenshi's folder, so you get `Kenshi\mods\PZASlowMo\`, then tick
   **PZASlowMo** in Meitou's mod list. If you also use PZA's SlowMo for RE_Kenshi, it is the same folder on purpose: each game loads only its
   own file.
 - It adds no items or world data, so its place in the load order doesn't matter. Safe to remove at any time.
 
 ## This is a beta
-The first builds were played in Meitou and worked. **This build (the slider window and the kept settings) has passed its offline checks
+The first builds were played in Meitou and worked. **This build (the kill cam) has passed its offline checks
 on Meitou 0.20.1, 0.21.0 and 0.22.1 but has not been played in game yet.** Expect rough edges.
 
 Known limits:
